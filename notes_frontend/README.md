@@ -1,40 +1,52 @@
-# Welcome to Remix!
+# Notes Frontend (Remix)
 
-- 📖 [Remix docs](https://remix.run/docs)
+A modern, minimalistic notes app UI built with Remix + Tailwind.
 
-## Development
+Features:
+- User authentication (login/register/logout)
+- Create, edit, delete notes
+- Search and filter by tag
+- Responsive layout with fixed sidebar, top app bar
+- Light/Dark theme toggle (persisted in cookie)
+- Uses REST API to communicate with notes backend
 
-Run the dev server:
+## Prerequisites
+- Node.js >= 20
+- A running backend API. Provide its base URL through environment variable.
 
-```shellscript
+## Setup
+
+1. Copy environment example and set values:
+```bash
+cp .env.example .env
+# edit .env and set NOTES_API_URL to your backend
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Run dev server:
+```bash
 npm run dev
 ```
 
-## Deployment
-
-First, build your app for production:
-
-```sh
+4. Build and run production:
+```bash
 npm run build
-```
-
-Then run the app in production mode:
-
-```sh
 npm start
 ```
 
-Now you'll need to pick a host to deploy it to.
+## Environment
 
-### DIY
+- NOTES_API_URL: Base URL of the notes backend (e.g. http://localhost:4000)
 
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
+## Styling and Theme
 
-Make sure to deploy the output of `npm run build`
+Tailwind is preconfigured. Primary colors:
+- primary: #4F8EF7
+- secondary: #F5F6FA
+- accent: #FFB347
 
-- `build/server`
-- `build/client`
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+Theme can be switched with the sun/moon icon in the top app bar.
